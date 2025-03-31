@@ -42,9 +42,9 @@ const startCronJob = (task, intervalMinutes) => {
     }, delay);
 };
 
-// app.get("/health", (req, res) => {
-//     res.status(200).json({ message: "Server is alive!" });
-// });
+app.get("/health", (req, res) => {
+    res.status(200).json({ message: "Server is alive!" });
+});
 
 // Start the server
 app.listen(PORT, () => {
