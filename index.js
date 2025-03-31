@@ -4,7 +4,7 @@ const cron = require('node-cron');
 const app = express();
 const PORT = process.env.PORT || 8000; // Use environment port if available
 
-const targetSecond = 38; // Ensure execution at XX:38
+const targetSecond = 24 // Ensure execution at XX:38
 
 // Function to calculate the delay until the next `XX:38` for each interval
 const getNextExecutionDelay = (intervalMinutes) => {
@@ -26,10 +26,24 @@ const getNextExecutionDelay = (intervalMinutes) => {
 };
 
 // Define cron tasks
-const task1Min = () => console.log('1-minute cron job executed at', new Date().toLocaleTimeString());
-const task3Min = () => console.log('3-minute cron job executed at', new Date().toLocaleTimeString());
-const task5Min = () => console.log('5-minute cron job executed at', new Date().toLocaleTimeString());
-const task10Min = () => console.log('10-minute cron job executed at', new Date().toLocaleTimeString());
+const task1Min = () => {
+    console.log('1-minute cron job executed at,', new Date().toLocaleTimeString()); fetch(`https://www.9bets.in/api/winner?period=0`).then(res => res.json()).then(data => console.log(data)).catch(
+        err => console.log(err));
+}
+const task3Min = () => {
+    console.log('3-minute cron job executed at', new Date().toLocaleTimeString()); fetch(`https://www.9bets.in/api/winner?period=1`).then(res => res.json()).then(data => console.log(data)).catch(
+        err => console.log(err));
+};
+
+const task5Min = () => {
+    console.log('5-minute cron job executed at', new Date().toLocaleTimeString()); fetch(`https://www.9bets.in/api/winner?period=2`).then(res => res.json()).then(data => console.log(data)).catch(
+        err => console.log(err));
+};
+
+const task10Min = () => {
+    console.log('10-minute cron job executed at', new Date().toLocaleTimeString()); fetch(`https://www.9bets.in/api/winner?period=3`).then(res => res.json()).then(data => console.log(data)).catch(
+        err => console.log(err));
+};
 
 // Start the cron jobs after the calculated delay
 const startCronJob = (task, intervalMinutes) => {
@@ -38,7 +52,7 @@ const startCronJob = (task, intervalMinutes) => {
 
     setTimeout(() => {
         // Set up cron job using node-cron
-        cron.schedule(`38 */${intervalMinutes} * * * *`, task); // Runs at XX:38, XX:38 + interval, etc.
+        cron.schedule(`24 */${intervalMinutes} * * * *`, task); // Runs at XX:38, XX:38 + interval, etc.
     }, delay);
 };
 
