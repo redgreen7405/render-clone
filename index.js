@@ -26,10 +26,10 @@ const getNextExecutionDelay = (intervalMinutes) => {
 };
 
 // Define cron tasks
-const task1Min = () => console.log('1-minute cron job executed at', new Date().toLocaleTimeString());
-const task3Min = () => console.log('3-minute cron job executed at', new Date().toLocaleTimeString());
-const task5Min = () => console.log('5-minute cron job executed at', new Date().toLocaleTimeString());
-const task10Min = () => console.log('10-minute cron job executed at', new Date().toLocaleTimeString());
+const task1Min = () => console.log('1-minute cron job executed ats', new Date().toLocaleTimeString());
+const task3Min = () => console.log('3-minute cron job executed ats', new Date().toLocaleTimeString());
+const task5Min = () => console.log('5-minute cron job executed ats', new Date().toLocaleTimeString());
+const task10Min = () => console.log('10-minute cron job executed ats', new Date().toLocaleTimeString());
 
 // Start the cron jobs after the calculated delay
 const startCronJob = (task, intervalMinutes) => {
