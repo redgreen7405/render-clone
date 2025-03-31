@@ -42,6 +42,10 @@ const startCronJob = (task, intervalMinutes) => {
     }, delay);
 };
 
+// app.get("/health", (req, res) => {
+//     res.status(200).json({ message: "Server is alive!" });
+// });
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT} at ${new Date().toLocaleTimeString()}`);
