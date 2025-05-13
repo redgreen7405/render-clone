@@ -1,5 +1,4 @@
 const express = require("express");
-const fetch = require("node-fetch");
 const app = express();
 
 const startTime = 1743441000000; // 11:50:00 UTC (fixed start)
