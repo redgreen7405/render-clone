@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 
 // Cron job for every minute at second 24
-cron.schedule("24 * * * * *", () => {
+cron.schedule("54 * * * * *", () => {
     console.log("1min")
     fetch("https://www.9bets.in/api/winner?period=0")
         .then((res) => res.json())
@@ -13,7 +13,7 @@ cron.schedule("24 * * * * *", () => {
 });
 
 // Cron job for every 3 minutes at second 24
-cron.schedule("24 */3 * * * *", () => {
+cron.schedule("54 */3 * * * *", () => {
     console.log("3min")
 
     fetch("https://www.9bets.in/api/winner?period=1")
@@ -23,7 +23,7 @@ cron.schedule("24 */3 * * * *", () => {
 });
 
 // Cron job for every 5 minutes at second 24
-cron.schedule("24 */5 * * * *", () => {
+cron.schedule("54 */5 * * * *", () => {
     console.log("5min")
 
     fetch("https://www.9bets.in/api/winner?period=2")
@@ -33,7 +33,7 @@ cron.schedule("24 */5 * * * *", () => {
 });
 
 // Cron job for every 10 minutes at second 24
-cron.schedule("24 */10 * * * *", () => {
+cron.schedule("54 */10 * * * *", () => {
     console.log("10min")
 
     fetch("https://www.9bets.in/api/winner?period=3")
