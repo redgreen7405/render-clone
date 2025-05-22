@@ -15,7 +15,7 @@ const timers = [
 // Helper: schedule each timer
 timers.forEach(({ period, interval }) => {
     const intervalMs = interval * 1000;
-    const triggerOffset = 4 * 1000; // Trigger 4 seconds early
+    const triggerOffset = 6 * 1000; // Trigger 4 seconds early
 
     // How far into the current loop we are
     const elapsed = (now - startTime) % intervalMs;
